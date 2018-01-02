@@ -1,0 +1,16 @@
+.App .page-title {
+    font-family: "Coventry Garden";
+    color: #D9CDA0;
+    text-align: center;
+    margin: 0.5% auto;
+    font-size: 2.5em;
+    text-shadow: 3px 9px 10px #A8A68D;
+    letter-spacing: 3.5px;
+    word-spacing: 7px;
+}
+
+.App .game-container {
+        width: 90vw;
+        height: 85vh;
+        margin: 0 auto;
+}
