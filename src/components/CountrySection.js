@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import '../css/CountrySection.css'
 
 const CountrySection = ({ currentQuestion}) => {
-    console.log(currentQuestion)
+    // console.log(currentQuestion)
     const flagStyle = {
         backgroundImage: `url('${currentQuestion.flag}')`
     }, countryPicStyle = {

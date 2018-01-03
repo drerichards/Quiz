@@ -57,7 +57,7 @@ const data = {
         ],
         choices: ["Tea and silk, were both accidentally discovered here after the fortuitous falling of a tea leaf and silk cocoon into an emperor and emperess's hot water cup respectively.",
             "Taishan, a coastal city in southern Guangdong province, calls itself the \"No. 1 Home of Overseas Chinese\". An estimated half a million Chinese residing in America are of Taishanese descent.",
-            "Given the \'Made In China\' tag, most people would be surprised to learn that China is actually the world's second-largest exporter of goods after the US, but the largest importer.",
+            "Given the 'Made In China' tag, most people would be surprised to learn that China is actually the world's second-largest exporter of goods after the US, but the largest importer.",
             "Housing Taoism, Buddhism, Confucianism and recently Protestant beliefs - China is estimated as the most religious country in the world with around 61% claiming Buddhism."
         ],
         addlInfo: ["China reigns as king exporter over the US by earning more than $771 billion in profits per a 2015 estimate in exported products alone.",
@@ -73,7 +73,7 @@ const data = {
         ],
         choices: ["The top of the head is considered sacred here. So unless you are a chief, you should leave your hats and sunglasses home. A 16th century missionary was eaten for this big taboo.",
             "Strangely enough, it is possible to be in two different time zones at the same time when on the island of Taveuni due to the fact that Fiji is spread across the international dateline.",
-            "Although popular \'FIJI\' brand water bears its namesake, the true water's origin lies in the US. The upscale drink however does provide a percentage of total sales back to Fiji.",
+            "Although popular 'FIJI' brand water bears its namesake, the true water's origin lies in the US. The upscale drink however does provide a percentage of total sales back to Fiji.",
             "Fiji is an archipelago made up of 333 islands that were formed through volcanic activity. The population of more than 850,000 citizens however, only occupy 6 of the largest islands."
         ],
         addlInfo: ["FIJI Water is a brand of bottled water derived, bottled, and shipped from a Fijian artesian aquifer in Viti Levu.",

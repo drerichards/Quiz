@@ -44,20 +44,54 @@
     padding: 0 1% 1% 0;
 }
 
-.ChoiceBoard .choice-button {
-    background: #34d97b;
-    background-image: linear-gradient(to bottom, #34d97b, #148c60);
+.ChoiceBoard .submit-button,
+.next-button {
+    font-family: "Berylium", Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 0.85em;
     border-radius: 28px;
     text-shadow: 2px 1px 2px #666666;
     color: #fff;
-    padding: 1% 3%;
+    padding: 0.5% 3% 0.8%;
     margin-top: 1%;
     width: 10%;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
-.ChoiceBoard .choice-button:hover {
+.ChoiceBoard .submit-button {
+    background: #34d97b;
+    background-image: linear-gradient(to bottom, #34d97b, #148c60);
+}
+
+.ChoiceBoard .submit-button:hover {
     background: #32b384;
     background-image: linear-gradient(to bottom, #32b384, #0c7a50);
+}
+
+.ChoiceBoard .next-button {
+    background: #FF7926;
+    background-image: linear-gradient(to bottom, #FF7926, #AB5800);
+}
+
+.ChoiceBoard .next-button:hover {
+    background: #e96e22;
+    background-image: linear-gradient(to bottom, #e96e22, #8a4701);
+}
+
+.ChoiceBoard .disabled-button {
+    background: #4a5c55;
+    color: rgb(148, 147, 147);
+    cursor: not-allowed;
+}
+
+.ChoiceBoard .disabled-button:hover {
+    background: #4a5c55;
+}
+
+.ChoiceBoard .choice-clicked {
+    outline-style: inset;
+    outline-width: thin;
+    background-color: rgba(42, 162, 245, 0.7);
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 1), 0 7px 16px 0 rgba(0, 0, 0, 1);
+    transition: all 0.2s ease-in-out;
 }
