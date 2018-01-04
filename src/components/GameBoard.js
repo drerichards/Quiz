@@ -4,7 +4,7 @@ import '../css/GameBoard.css'
 import CountrySection from './CountrySection'
 import ScoreSection from './ScoreSection'
 
-const GameBoard = ({ currentQuestion }) => {
+const GameBoard = ({ progress, score, progressMessage, elementShown, currentQuestion }) => {
     return (
         <div className='GameBoard'>
             {/* <div className='board legend-section'>
@@ -13,13 +13,20 @@ const GameBoard = ({ currentQuestion }) => {
                     To score, select the <strong>TWO facts</strong> about the country displayed.
                              Choose wisely and <strong>Win!</strong></p>
             </div> */}
-            <CountrySection currentQuestion={currentQuestion}/>
-            <ScoreSection addlInfo={currentQuestion.addlInfo}/>
+            <CountrySection currentQuestion={currentQuestion} />
+            <ScoreSection progress={progress}
+                score={score} progressMessage={progressMessage}
+                elementShown={elementShown}
+                addlInfo={currentQuestion.addlInfo} />
         </div>
     )
 }
 
 GameBoard.propTypes = {
+    progress: PropTypes.number.isRequired,
+    score: PropTypes.number.isRequired,
+    progressMessage: PropTypes.string.isRequired,
+    elementShown: PropTypes.bool.isRequired,
     currentQuestion: PropTypes.object.isRequired
 }
 

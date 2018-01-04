@@ -11,36 +11,48 @@ class App extends Component {
       allQuestions: data.allQuestions,
       currentQuestion: data.allQuestions[0],
       progress: 1,
-      userAnswers: [],
+      userAnswer: [],
       submitEnabled: false,
-      choiceClicked: false
+      elementShown: true,
+      progressMessage: '???',
+      score: 0
     }
   }
 
   onChoiceClick = answer => {
-    const { userAnswers, choiceClicked } = this.state    
-    let user_answer = answer.target.innerText
-    this.setState({ choiceClicked: !choiceClicked })
-    if (userAnswers.length < 2) {
-      this.setState({ userAnswers: [...userAnswers, user_answer] })
-      userAnswers.length >= 1 ? this.setState({ submitEnabled: true }) :
+    const { userAnswer } = this.state
+    if (userAnswer.length < 1) {
+      userAnswer.length === 0 ? this.setState({ submitEnabled: true }) :
         this.setState({ submitEnabled: false })
     }
+    this.setState({ userAnswer: [answer] })
   }
 
   onSubmitClick = () => {
-    console.log('jjj')
-
+    const { score, currentQuestion, userAnswer, elementShown, progressMessage } = this.state
+    this.setState({ elementShown: !elementShown })
+    if (userAnswer[0] === currentQuestion.rightAnswer[0]) {
+      this.setState({
+        score: score + 20,
+        progressMessage: 'Correct!'
+      })
+    } else {
+      this.setState({
+        progressMessage: 'Sorry!'
+      })
+    }
   }
 
   nextQuestionClick = () => {
-    const { progress, allQuestions } = this.state
+    const { progress, allQuestions, elementShown } = this.state
     if (progress < allQuestions.length) {
       this.setState({
         progress: progress + 1,
         currentQuestion: allQuestions[progress],
         submitEnabled: false,
-        userAnswers: []
+        elementShown: !elementShown,
+        userAnswer: [],
+        progressMessage: '???'
       })
     }
   }
@@ -50,13 +62,16 @@ class App extends Component {
       <div className='App'>
         <header className='page-title'>Country Facts Quiz</header>
         <section className='game-container'>
-          <GameBoard currentQuestion={this.state.currentQuestion} />
+          <GameBoard progress={this.state.progress}
+            score={this.state.score} progressMessage={this.state.progressMessage}
+            elementShown={this.state.elementShown}
+            currentQuestion={this.state.currentQuestion} />
           <ChoiceBoard choices={this.state.currentQuestion.choices}
-            choiceClicked={this.state.choiceClicked}
             submitEnabled={this.state.submitEnabled}
             onChoiceClick={this.onChoiceClick}
             onSubmitClick={this.onSubmitClick}
-            nextQuestionClick={this.nextQuestionClick} />
+            nextQuestionClick={this.nextQuestionClick}
+            elementShown={this.state.elementShown} />
         </section>
       </div>
     )
