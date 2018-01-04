@@ -22,7 +22,7 @@ class ChoiceBoard extends Component {
     }
 
     render() {
-        const { choices, submitEnabled, onChoiceClick, onSubmitClick, nextQuestionClick, elementShown } = this.props
+        const { choices, submitEnabled, onSubmitClick, elementShown } = this.props
         return (
             <footer className='ChoiceBoard'>
                 <div className='choice-container'>

@@ -10,9 +10,20 @@
 }
 
 .App .game-container {
-    width: 90vw;
-    height: 85vh;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+}
+
+@media only screen and (min-device-width: 768px) {
+    .App .game-container {
+        min-width: 1000px;
+        width: 90vw;
+        height: 85vh;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+    }
 }

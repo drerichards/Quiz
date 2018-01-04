@@ -13,6 +13,7 @@
 
 .country-section .legend-icon {
     cursor: pointer;
+    width: 35px;
     transition: all 0.3s ease-in-out;
 }
 
@@ -24,6 +25,7 @@
     height: 100%;
     width: 70%;
     padding: 1% 2%;
+    margin: 0 auto;
     border-radius: 7px;
     text-align: center;
     font-weight: 600;
@@ -60,3 +62,9 @@
     background-size: contain;
     background-position: center;
 }
+
+    @media only screen and (min-device-width: 768px) {
+        .country-section .legend-icon {
+            width: 90%;
+        }
+    }

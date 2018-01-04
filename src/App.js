@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   onSubmitClick = () => {
-    const { score, currentQuestion, userAnswer, elementShown, progressMessage } = this.state
+    const { score, currentQuestion, userAnswer, elementShown } = this.state
     this.setState({ elementShown: !elementShown })
     if (userAnswer[0] === currentQuestion.rightAnswer[0]) {
       this.setState({

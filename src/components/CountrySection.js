@@ -16,9 +16,9 @@ const CountrySection = ({ currentQuestion, onLegendClick, legendShown }) => {
                     src="https://res.cloudinary.com/andrerichards/image/upload/v1514879610/quiz/legend_icon.png" alt="legend" />
                 <div className={`legend-text ${legendShown ? '' : 'is-hidden'}`}>
                     <h1>Instructions</h1>
-                    <p>Test your knowledge of the world by choosing from the four answers below.</p>
+                    <p>Test your knowledge of the world by choosing from the three answers below.</p>
                     <p>To score, select the correct fact about the country displayed.</p>
-                    <p>Choose wisely and <strong>Win!</strong></p>
+                    <p>Choose wisely and aim for the High Score!</p>
                 </div>
             </div>
             <header className="country-title">{currentQuestion.title}</header>
