@@ -1,59 +1,48 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import '../css/ScoreSection.css'
 
 
-const ScoreSection = ({ progress, score, progressMessage, elementShown, addlInfo }) => {
-    const numbers = [1, 2, 3, 4, 5]
-    document.addEventListener("DOMContentLoaded",  (event) => {
-    //     let markers = document.getElementsByClassName('image-marker')[progress-1],
-    //         element = document.createElement("i")
-    //     let good = <i class="fa fa-check" aria-hidden="true"></i>,
-    //         neutral = <i class="fa fa-minus" aria-hidden="true"></i>,
-    //         bad = <i class="fa fa-times" aria-hidden="true"></i>
-    //     console.log(markers)
-    //     markers.appendChild(element)
-    //     element.classList.add('fa')
-        // console.log(progressMessage)
-        const text = document.getElementsByClassName('progress-counter')[0]
-        const marker = document.getElementById(`marker${progress}`)
-    //     if (progressMessage === 'Correct!' ){
-        // console.log(text)
-            // console.log(marker)
-            
-    //         element.classList.add('fa-check')
-    //     } else if (progressMessage === 'Almost!' ){
-    //         element.classList.add('fa-check')
-    //     } else if (progressMessage === 'Sorry!' ) {
-    //         element.classList.add('fa-check')
-    //     }
-        // progressMessage === 'Correct!' ? element.classList.add('fa-check') :
-        //     (progressMessage === 'Almost!') ? element.classList.add('fa-minus') :
-        //     (progressMessage === 'Sorry!') ? element.classList.add('fa-times') : ''
-    })
+class ScoreSection extends Component {
+    markerFeedback() {
+        const { progress, progressMessage } = this.props
+        const markers = document.getElementsByClassName('fa')
+        const markerArr = []
+        for (let i = 0; i < markers.length; i++) {
+            markerArr.push(markers[i])
+        }
+        const indexCount = progress - 1
+        progressMessage === 'Correct!' ? markerArr[indexCount].classList.add('fa-check') :
+            (progressMessage === 'Sorry!') ? markerArr[indexCount].classList.add('fa-times') : ''
+    }
 
-    return (
-        <div className='board score-section'>
-            <div>
-                <div className={`progress-counter ${progressMessage === 'Correct!' ? 'green' : (progressMessage === 'Sorry!') ? 'red': 'white'}`}>
-                    {progressMessage}
-                </div>
-                <header className='score-banner'>
-                    Score: <span className={score < 59 ? 'red' : (score >= 60 && score < 90) ? 'green' : 'blue'}>{score}</span> / 100
+    render() {
+        const { score, progressMessage, elementShown, addlInfo } = this.props
+        const numbers = [1, 2, 3, 4, 5]
+        this.markerFeedback()
+        return (
+            <div className='board score-section'>
+                <div>
+                    <div className={`progress-counter ${progressMessage === 'Correct!' ? 'green' : (progressMessage === 'Sorry!') ? 'red' : 'white'}`}>
+                        {progressMessage}
+                    </div>
+                    <header className='score-banner'>
+                        Score: <span className={score < 59 ? 'red' : (score >= 60 && score < 90) ? 'green' : 'blue'}>{score}</span> / 100
                     </header>
-                <aside className='score-counter'>
-                    {numbers.map((number) => <div key={number}>{number}
-                        <div className='image-marker'>
-                            <i id={'marker'+number} className={`fa ${progressMessage === 'Correct!' ? 'fa-check' : 'fa-minus'}`}></i></div></div>)}
-                </aside>
+                    <aside className='score-counter'>
+                        {numbers.map((number, i) => <div key={number}>{number}
+                            <div className='image-marker'>
+                                <i ref={input => { this[`marker${i}`] = input }} className={`fa `}></i></div></div>)}
+                    </aside>
+                </div>
+                <section className={`addl-info ${elementShown ? 'is-hidden' : ''}`}>
+                    <ul>
+                        {addlInfo.map((bullet) => <li key={bullet}>- {bullet}</li>)}
+                    </ul>
+                </section>
             </div>
-            <section className={`addl-info ${elementShown ? 'is-hidden' : ''}`}>
-                <ul>
-                    {addlInfo.map((bullet) => <li key={bullet}>- {bullet}</li>)}
-                </ul>
-            </section>
-        </div>
-    )
+        )
+    }
 }
 
 ScoreSection.propTypes = {
