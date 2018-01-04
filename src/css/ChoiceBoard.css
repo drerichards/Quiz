@@ -1,7 +1,7 @@
 .ChoiceBoard {
-    width: 100%;
+    width: 90%;
     height: 30vh;
-    margin: 1% 0;
+    margin: 1% auto;
     display: flex;
     flex-direction: column;
     align-items: center;

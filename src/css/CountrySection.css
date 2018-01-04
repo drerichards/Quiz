@@ -5,6 +5,18 @@
     align-items: center;
 }
 
+.country-section .legend-icon {
+    position: absolute;
+    left: 0;
+    margin: 0 3%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.country-section .legend-icon:hover{
+    transform: scale(1.1);
+}
+
 .country-section .country-title {
     color: #7C8540;
     font-family: "Splandor";

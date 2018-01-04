@@ -10,10 +10,10 @@ class ChoiceBoard extends Component {
         }
     }
 
-    handleSelect(e, i) {
+    handleSelect(index) {
         this.removeHighlight()
-        this[`box${i}`].classList.add('choice-clicked')
-        this.props.onChoiceClick(e.target.innerText)
+        this[`box${index}`].classList.add('choice-clicked')
+        this.props.onChoiceClick(this[`box${index}`].innerText)
     }
 
     handleNextClick() {
@@ -29,7 +29,7 @@ class ChoiceBoard extends Component {
                     {choices.map((choice, i) => {
                         return <div ref={input => { this[`box${i}`] = input }} key={i}
                             className='choice-box'
-                            onClick={e => this.handleSelect(e, i)}>
+                            onClick={() => this.handleSelect(i)}>
                             <img src="https://res.cloudinary.com/andrerichards/image/upload/v1514879610/quiz/wheel_icon.png" alt="icon" />
                             {choice}
                         </div>
@@ -41,7 +41,6 @@ class ChoiceBoard extends Component {
                 <button type='button' className={`next-button ${elementShown ? 'is-hidden' : ''}`}
                     onClick={() => this.handleNextClick()}>Next >></button>
             </footer>
-
         )
     }
 }
