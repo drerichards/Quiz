@@ -3,7 +3,7 @@
     font-family: "Splandor";
     font-size: 1.4em;
     letter-spacing: 1px;
-    text-shadow: 0px 1px 0px #667;
+    text-shadow: 0px 1px 0px #000;
 }
 
 .score-section .score-banner {
@@ -44,6 +44,7 @@
 
 .fa {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.493);
+    margin-left: -1%;
 }
 
 #root>div>section>div>div.board.score-section>div> .white {
@@ -67,4 +68,8 @@
 
 .blue {
     color: rgb(0, 255, 242);
+}
+
+#root>div>section>div>div.board.score-section>div>aside>div{
+    text-align: center;
 }

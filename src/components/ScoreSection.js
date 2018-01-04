@@ -32,7 +32,7 @@ class ScoreSection extends Component {
                     <aside className='score-counter'>
                         {numbers.map((number, i) => <div key={number}>{number}
                             <div className='image-marker'>
-                                <i ref={input => { this[`marker${i}`] = input }} className={`fa `}></i></div></div>)}
+                                <i className={`fa `}></i></div></div>)}
                     </aside>
                 </div>
                 <section className={`addl-info ${elementShown ? 'is-hidden' : ''}`}>

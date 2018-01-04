@@ -15,7 +15,8 @@ class App extends Component {
       submitEnabled: false,
       elementShown: true,
       progressMessage: '???',
-      score: 0
+      score: 0,
+      legendShown: false
     }
   }
 
@@ -57,6 +58,11 @@ class App extends Component {
     }
   }
 
+  onLegendClick = () =>{
+    this.setState({legendShown: !this.state.legendShown })
+    console.log('oo')
+  }
+
   render() {
     return (
       <div className='App'>
@@ -65,7 +71,9 @@ class App extends Component {
           <GameBoard progress={this.state.progress}
             score={this.state.score} progressMessage={this.state.progressMessage}
             elementShown={this.state.elementShown}
-            currentQuestion={this.state.currentQuestion} />
+            currentQuestion={this.state.currentQuestion} 
+            onLegendClick={this.onLegendClick}
+            legendShown={this.state.legendShown}/>
           <ChoiceBoard choices={this.state.currentQuestion.choices}
             submitEnabled={this.state.submitEnabled}
             onChoiceClick={this.onChoiceClick}
