@@ -142,7 +142,7 @@
         justify-content: space-evenly;
     }
     .ChoiceBoard .choice-box {
-        align-items: inherit;
+        align-items: flex-start;
         font-size: 1.35em;
     }
     .ChoiceBoard .submit-button,
