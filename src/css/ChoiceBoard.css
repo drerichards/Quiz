@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .ChoiceBoard .choice-container {
@@ -30,7 +31,7 @@
     text-align: justify;
     word-wrap: break-word;
     text-shadow: 1px 2px 1px #000;
-    overflow-y: auto;
+    overflow: auto;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -48,7 +49,8 @@
 }
 
 .ChoiceBoard .submit-button,
-.next-button {
+.next-button,
+.play-button {
     font-family: "Berylium", Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1em;
     border-radius: 28px;
@@ -56,7 +58,7 @@
     color: #fff;
     padding: 0.5% 3% 0.8%;
     margin-top: 1%;
-    width: 40%;
+    width: 200px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -91,6 +93,26 @@
     background: #4a5c55;
 }
 
+.play-button {
+    background: #1d9ebe;
+    background-image: linear-gradient(to bottom, #1d9ebe, #136479);
+    animation: colorchange 2s;
+    animation-iteration-count: infinite;
+    box-shadow: 0px -5px 30px 2px #0f4f5f inset;
+}
+
+@keyframes colorchange {
+    0% {
+        background: #1d9ebe;
+    }
+    50% {
+        background: #136479;
+    }
+    100% {
+        background: #1d9ebe;
+    }
+}
+
 .ChoiceBoard .choice-clicked {
     outline-style: inset;
     outline-width: thin;
@@ -115,14 +137,18 @@
         height: 35vh;
     }
     .ChoiceBoard .choice-container {
-        height: 20vh;
         flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
     }
     .ChoiceBoard .choice-box {
+        align-items: inherit;
         font-size: 1.35em;
     }
     .ChoiceBoard .submit-button,
-    .next-button {
+    .next-button,
+    .play-button {
         width: 10%;
+        min-width: 200px;
     }
 }

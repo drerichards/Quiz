@@ -16,7 +16,10 @@ class App extends Component {
       elementShown: true,
       progressMessage: '???',
       score: 0,
-      legendShown: false
+      legendShown: false,
+      resultsShown: false,
+      playButtonShown: false,
+      hideElements: false
     }
   }
 
@@ -32,15 +35,13 @@ class App extends Component {
   onSubmitClick = () => {
     const { score, currentQuestion, userAnswer, elementShown } = this.state
     this.setState({ elementShown: !elementShown })
-    if (userAnswer[0] === currentQuestion.rightAnswer[0]) {
+    if (userAnswer[0].trim() === currentQuestion.rightAnswer[0]) {
       this.setState({
         score: score + 20,
         progressMessage: 'Correct!'
       })
     } else {
-      this.setState({
-        progressMessage: 'Sorry!'
-      })
+      this.setState({ progressMessage: 'Sorry!' })
     }
   }
 
@@ -55,12 +56,13 @@ class App extends Component {
         userAnswer: [],
         progressMessage: '???'
       })
+    } else if (progress === allQuestions.length) {
+      this.setState({ resultsShown: true, playButtonShown: true, hideElements: true })
     }
   }
 
-  onLegendClick = () =>{
-    this.setState({legendShown: !this.state.legendShown })
-    console.log('oo')
+  onLegendClick = () => {
+    this.setState({ legendShown: !this.state.legendShown })
   }
 
   render() {
@@ -71,15 +73,20 @@ class App extends Component {
           <GameBoard progress={this.state.progress}
             score={this.state.score} progressMessage={this.state.progressMessage}
             elementShown={this.state.elementShown}
-            currentQuestion={this.state.currentQuestion} 
+            currentQuestion={this.state.currentQuestion}
             onLegendClick={this.onLegendClick}
-            legendShown={this.state.legendShown}/>
+            legendShown={this.state.legendShown}
+            resultsShown={this.state.resultsShown}
+            hideElements={this.state.hideElements}
+          />
           <ChoiceBoard choices={this.state.currentQuestion.choices}
             submitEnabled={this.state.submitEnabled}
             onChoiceClick={this.onChoiceClick}
             onSubmitClick={this.onSubmitClick}
             nextQuestionClick={this.nextQuestionClick}
-            elementShown={this.state.elementShown} />
+            elementShown={this.state.elementShown}
+            playButtonShown={this.state.playButtonShown}
+            hideElements={this.state.hideElements} />
         </section>
       </div>
     )

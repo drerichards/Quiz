@@ -26,7 +26,7 @@ body {
     font-family: sans-serif;
     overflow-x: hidden;
     position: relative;
-    background-image: url("https://res.cloudinary.com/andrerichards/image/upload/c_scale,h_500/v1514879589/quiz/wood.jpg");
+    background-image: url("https://res.cloudinary.com/andrerichards/image/upload/c_scale,e_brightness_hsb,h_500/v1515127100/quiz/bwood.jpg");
     font-family: "Berylium", Calibri, 'Trebuchet MS', sans-serif;
     overflow: hidden;
 }
@@ -85,6 +85,6 @@ ul li {
 @media only screen and (min-device-width: 768px) {
     body {
         font-size: 20px;
-        background-image: url("https://res.cloudinary.com/andrerichards/image/upload/v1514879589/quiz/wood.jpg");
+        background-image: url("https://res.cloudinary.com/andrerichards/image/upload/e_brightness_hsb/v1515127100/quiz/bwood.jpg");
     }
 }

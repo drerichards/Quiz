@@ -8,7 +8,10 @@
 .country-section .legend {
     position: absolute;
     left: 0;
-    margin: 0 3%;
+    bottom: 0;
+    margin: 0 2%;
+    display: flex;
+    align-items: flex-end;
 }
 
 .country-section .legend-icon {
@@ -31,16 +34,30 @@
     font-weight: 600;
     border: 3px #5C3221 groove;
     color: #5C3221;
-    text-shadow: 0px 1px 12px #fff;
+    text-shadow: 0px 1px 7px #fff;
     background-color: rgba(179, 167, 129, 0.95);
     box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.39), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 1s ease;
 }
 
 .country-section .legend-text h1 {
-    text-decoration: underline;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.39);
+    color: #fff;
+    background-color: #5C3221;
+    text-shadow: 0px 0px 0px #000000;
+    font-weight: 100;
 }
 
-.country-section .country-title {
+.country-section .country-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.country-section .country-container .country-title {
     color: #7C8540;
     font-family: "Splandor";
     font-size: 2.2em;
@@ -49,14 +66,14 @@
     margin-bottom: 3%;
 }
 
-.country-section .country-flag {
-    width: 13%;
+.country-section .country-container .country-flag {
+    width: 10%;
     height: 12%;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.country-section .country-image {
+.country-section .country-container .country-image {
     min-width: 100%;
     height: 70%;
     background-repeat: no-repeat;
@@ -64,34 +81,30 @@
     background-position: center;
 }
 
-    @media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
-.country-section .legend {
-    position: absolute;
-    left: 0;
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
+    .country-section .legend {
         width: 100%;
-        height: 40vh;
-    margin: 0 3%;
-}
-
-.country-section .legend-text {
-    height: 100%;
-    width: 70%;
-    padding: 1% 2%;
-    margin: 0 auto;
-    border-radius: 7px;
-    text-align: center;
-    font-weight: 600;
-    border: 3px #5C3221 groove;
-    color: #5C3221;
-    text-shadow: 0px 1px 12px #fff;
-    background-color: rgba(179, 167, 129, 0.95);
-    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.39), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
-    overflow: auto;
-}
-.country-section .legend-text h1 {
-   margin: 1% 0;
-}
+        height: 50vh;
     }
+    .country-section .legend-text {
+        height: 100%;
+        width: 70%;
+        padding: 1% 2%;
+        margin: 0 auto;
+        border-radius: 7px;
+        text-align: center;
+        font-weight: 600;
+        border: 3px #5C3221 groove;
+        color: #5C3221;
+        text-shadow: 0px 1px 12px #fff;
+        background-color: rgba(179, 167, 129, 0.95);
+        box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.39), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+        overflow: auto;
+    }
+    .country-section .legend-text h1 {
+        margin: 1% 0;
+    }
+}
 
 @media only screen and (min-device-width: 768px) {
     .country-section .legend-icon {

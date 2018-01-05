@@ -7,6 +7,8 @@
     text-shadow: 3px 9px 10px #A8A68D;
     letter-spacing: 3.5px;
     word-spacing: 7px;
+    border-bottom: 0.5px solid;
+    border-top: 0.5px solid;
 }
 
 .App .game-container {

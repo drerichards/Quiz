@@ -12,12 +12,15 @@ class ScoreSection extends Component {
             markerArr.push(markers[i])
         }
         const indexCount = progress - 1
-        progressMessage === 'Correct!' ? markerArr[indexCount].classList.add('fa-check') :
-            (progressMessage === 'Sorry!') ? markerArr[indexCount].classList.add('fa-times') : ''
+        if (progressMessage === 'Correct!') {
+            markerArr[indexCount].classList.add('fa-check')
+        } else if (progressMessage === 'Sorry!') {
+            markerArr[indexCount].classList.add('fa-times')
+        }
     }
 
     render() {
-        const { score, progressMessage, elementShown, addlInfo } = this.props
+        const { score, progressMessage, elementShown, addlInfo, hideElements } = this.props
         const numbers = [1, 2, 3, 4, 5]
         this.markerFeedback()
         return (
@@ -35,11 +38,12 @@ class ScoreSection extends Component {
                                 <i className={`fa `}></i></div></div>)}
                     </aside>
                 </div>
-                <section className={`addl-info ${elementShown ? 'is-hidden' : ''}`}>
+                {!hideElements ? <section className={`addl-info ${elementShown ? 'is-hidden' : ''}`}>
                     <ul>
                         {addlInfo.map((bullet) => <li key={bullet}>- {bullet}</li>)}
                     </ul>
-                </section>
+                </section> : ''}
+
             </div>
         )
     }
@@ -50,7 +54,8 @@ ScoreSection.propTypes = {
     score: PropTypes.number.isRequired,
     progressMessage: PropTypes.string.isRequired,
     elementShown: PropTypes.bool.isRequired,
-    addlInfo: PropTypes.array.isRequired
+    addlInfo: PropTypes.array.isRequired,
+    hideElements: PropTypes.bool.isRequired
 }
 
 export default ScoreSection
