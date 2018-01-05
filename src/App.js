@@ -65,6 +65,23 @@ class App extends Component {
     this.setState({ legendShown: !this.state.legendShown })
   }
 
+  playButtonClick = () => {
+    this.setState({
+      allQuestions: data.allQuestions,
+      currentQuestion: data.allQuestions[0],
+      progress: 1,
+      userAnswer: [],
+      submitEnabled: false,
+      elementShown: true,
+      progressMessage: '???',
+      score: 0,
+      legendShown: false,
+      resultsShown: false,
+      playButtonShown: false,
+      hideElements: false
+    })
+  }
+
   render() {
     return (
       <div className='App'>
@@ -84,6 +101,7 @@ class App extends Component {
             onChoiceClick={this.onChoiceClick}
             onSubmitClick={this.onSubmitClick}
             nextQuestionClick={this.nextQuestionClick}
+            playButtonClick={this.playButtonClick}
             elementShown={this.state.elementShown}
             playButtonShown={this.state.playButtonShown}
             hideElements={this.state.hideElements} />

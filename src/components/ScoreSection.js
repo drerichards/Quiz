@@ -11,6 +11,13 @@ class ScoreSection extends Component {
         for (let i = 0; i < markers.length; i++) {
             markerArr.push(markers[i])
         }
+
+        if(progress === 1){
+            for (let i = 0; i < markers.length; i++) {
+                markers[i].classList = 'fa'
+            }
+        }
+
         const indexCount = progress - 1
         if (progressMessage === 'Correct!') {
             markerArr[indexCount].classList.add('fa-check')

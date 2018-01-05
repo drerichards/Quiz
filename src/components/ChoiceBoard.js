@@ -22,7 +22,7 @@ class ChoiceBoard extends Component {
     }
 
     render() {
-        const { choices, submitEnabled, onSubmitClick, elementShown, playButtonShown, hideElements } = this.props
+        const { choices, submitEnabled, onSubmitClick, elementShown, playButtonShown, hideElements, playButtonClick } = this.props
         const button = <span>
             <button type='button' className={`submit-button ${submitEnabled ? '' : 'disabled-button'}
             ${elementShown ? '' : 'is-hidden'}`} onClick={onSubmitClick} disabled={submitEnabled ? '' : 'disabled'}>
@@ -44,7 +44,7 @@ class ChoiceBoard extends Component {
                     })}
                 </div> : ''}
                 {!playButtonShown ? button :
-                    <button type='button' className='play-button' onClick={() => this.handleNextClick()}>Play Again?</button>
+                    <button type='button' className='play-button' onClick={playButtonClick}>Play Again?</button>
                 }
             </footer>
         )
@@ -57,6 +57,7 @@ ChoiceBoard.propTypes = {
     onChoiceClick: PropTypes.func.isRequired,
     onSubmitClick: PropTypes.func.isRequired,
     nextQuestionClick: PropTypes.func.isRequired,
+    playButtonClick: PropTypes.func.isRequired,
     elementShown: PropTypes.bool.isRequired,
     playButtonShown: PropTypes.bool.isRequired,
     hideElements: PropTypes.bool.isRequired
