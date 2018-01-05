@@ -75,11 +75,18 @@
     text-align: center;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
+    .score-section .addl-info {
+        margin-top: 15%;
+    }
+}
+
 @media only screen and (min-device-width: 768px) {
     .score-section .score-banner {
         padding: 4% 0 8%;
     }
     .score-section .addl-info {
+        margin-top: 0;
         background-color: rgba(255, 255, 255, 0.8);
     }
 }

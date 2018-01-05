@@ -28,10 +28,11 @@ class ChoiceBoard extends Component {
                 <div className='choice-container'>
                     {choices.map((choice, i) => {
                         return <div ref={input => { this[`box${i}`] = input }} key={i}
-                            className='choice-box'
-                            onClick={() => this.handleSelect(i)}>
-                            <img src="https://res.cloudinary.com/andrerichards/image/upload/v1514879610/quiz/wheel_icon.png" alt="icon" />
-                            {choice}
+                            className='choice-box' onClick={() => this.handleSelect(i)}>
+                            <div>
+                                <img src="https://res.cloudinary.com/andrerichards/image/upload/v1514879610/quiz/wheel_icon.png" alt="icon" />
+                                {choice}
+                            </div>
                         </div>
                     })}
                 </div>
