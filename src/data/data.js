@@ -21,7 +21,7 @@ const data = {
         rightAnswer: ["After its introduction by French colonists in 1819, the majority of the world's vanilla strain can now be traced here to a strain known as \"Bourbon vanilla\"."
         ],
         choices: ["After its introduction by French colonists in 1819, the majority of the world's vanilla strain can now be traced here to a strain known as \"Bourbon vanilla\".",
-            "The earliest settlers of this island came from the East African region of Mozambique in 350 BCE. They lived isolated until first contact with  captain, Diogo Dias in year 1500.",
+            "Early settlers came from the African region of Mozambique in 350 BCE. They lived isolated until first contact with  captain, Diogo Dias in year 1500.",
             "Brazilian Capoeira is the most widely practiced martial arts form in Madagascar. The major difference on this island however, is their use of weaponry."
         ],
         addlInfo: ["Although based on Capoeira, Madagascar developed their own form of bare-fisted combat known as Moraingy (Moringue) - which is also weaponless.",
@@ -36,7 +36,7 @@ const data = {
         ],
         choices: [
             "With Trinidad's economy primarily focused on tourism, it is ranked as a nation soon destined to break into the top 10 of wealthiest countries in the Western Hemisphere.",
-            "The Trinidad Carnival is an annual event that begins on the nation's Independence Day from colonial rule. It is typically preceded by a commencement celebration known as J'Ouvert.",
+            "The Trinidad Carnival is an annual event that begins on the nation's Independence Day. It is typically preceded by a commencement celebration known as J'Ouvert.",
             "The Miss Universe Pageant has crowned two Trinidadian beauties - Miss Wendy Fitzwilliam in 1998 and the pageant's first ever black recipient in 1977 - Miss Janelle Commissiong."
         ],
         addlInfo: ["Trinidad's economy is based mainly upon natural gas, petrochemicals, and steel. Recongnized by the World Bank as the third richest nation in the Americas after the US and Canada.",

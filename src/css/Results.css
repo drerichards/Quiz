@@ -34,6 +34,7 @@
 
 @media only screen and (min-device-width: 768px) {
     .Results {
+        height: 50%;
         padding: 7% 5%;
     }
 }

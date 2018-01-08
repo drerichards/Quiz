@@ -3,7 +3,7 @@
     color: #D9CDA0;
     text-align: center;
     margin: 0.5% auto;
-    font-size: 2.5em;
+    font-size: 1.5em;
     text-shadow: 3px 9px 10px #A8A68D;
     letter-spacing: 3.5px;
     word-spacing: 7px;
@@ -27,11 +27,14 @@
 
 @media only screen and (min-device-width: 768px) {
     .App .game-container {
-        min-width: 1000px;
+        /* min-width: 1000px; */
         width: 90vw;
         height: 85vh;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
+    }
+    .App .page-title {
+        font-size: 2.5em;
     }
 }

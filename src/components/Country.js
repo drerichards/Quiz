@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '../css/CountrySection.css'
 
-const Country = ({ currentQuestion, onLegendClick, legendShown })  => {
+const Country = ({ currentQuestion, onLegendClick, legendShown }) => {
     const flagStyle = {
         backgroundImage: `url('${currentQuestion.flag}')`
     }, countryPicStyle = {
@@ -11,8 +11,10 @@ const Country = ({ currentQuestion, onLegendClick, legendShown })  => {
 
     return (
         <div className='country-container'>
-            <header className="country-title">{currentQuestion.title}</header>
-            <div className="country-flag" style={flagStyle}></div>
+            <div className='titleAndFlag'>
+                <header className="country-title">{currentQuestion.title}</header>
+                <div className="country-flag" style={flagStyle}></div>
+            </div>
             <div className="country-image" style={countryPicStyle}></div>
             <div className='legend'>
                 <img className='legend-icon' onClick={onLegendClick}
