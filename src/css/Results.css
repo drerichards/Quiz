@@ -1,6 +1,6 @@
 .Results {
-    height: 95%;
-    width: 70%;
+    height: auto;
+    width: 100%;
     padding: 3% 10%;
     text-align: center;
     background: rgba(50, 71, 26, 0.568);
@@ -22,10 +22,21 @@
     padding: 1%;
 }
 
+.Results .play-button {
+    display: block;
+    width: 50%;
+    min-width: 0;
+    margin: 1% auto;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
     .Results {
-        height: 80%;
-        padding: 3% 5%;
+        height: 100%;
+        padding: 0% 5%;
+    }
+    .Results h1,
+    .Results footer {
+        margin: 2% 0;
     }
     .Results img {
         display: none;
@@ -34,7 +45,7 @@
 
 @media only screen and (min-device-width: 768px) {
     .Results {
-        height: 50%;
+        height: auto;
         padding: 7% 5%;
     }
 }

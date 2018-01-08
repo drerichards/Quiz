@@ -4,9 +4,10 @@ import '../css/GameBoard.css'
 import CountrySection from './CountrySection'
 import ScoreSection from './ScoreSection'
 
-const GameBoard = ({ progress, score, progressMessage, elementShown, currentQuestion, onLegendClick, legendShown, resultsShown, hideElements }) => {
+const GameBoard = 
+({ progress, score, progressMessage, elementShown, currentQuestion, onLegendClick, legendShown, resultsShown, hideElements, playButtonShown, playButtonClick }) => {
     const fullWidthStyle = {
-        height: '100%'
+        height: '90%'
     }
     const dummyStyle = {
         visibility: 'visible'
@@ -15,7 +16,9 @@ const GameBoard = ({ progress, score, progressMessage, elementShown, currentQues
         <div className='GameBoard' style={!hideElements? dummyStyle : fullWidthStyle}>
             <CountrySection currentQuestion={currentQuestion}
                 score={score} onLegendClick={onLegendClick}
-                legendShown={legendShown}
+                legendShown={legendShown} 
+                playButtonShown={playButtonShown}
+                playButtonClick={playButtonClick}
                 resultsShown={resultsShown} />
             <ScoreSection progress={progress}
                 score={score} progressMessage={progressMessage}
@@ -34,7 +37,9 @@ GameBoard.propTypes = {
     currentQuestion: PropTypes.object.isRequired,
     onLegendClick: PropTypes.func.isRequired,
     legendShown: PropTypes.bool.isRequired,
-    resultsShown: PropTypes.bool.isRequired,
+    resultsShown: PropTypes.bool.isRequired, 
+    playButtonShown: PropTypes.bool.isRequired,
+    playButtonClick: PropTypes.func.isRequired,
     hideElements: PropTypes.bool.isRequired
 }
 

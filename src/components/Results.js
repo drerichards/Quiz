@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import '../css/Results.css'
 
-const Results = ({ score }) => {
+const Results = ({ score, playButtonShown, playButtonClick }) => {
     return (
         <div className='Results'>
             <main>
@@ -13,7 +13,8 @@ const Results = ({ score }) => {
                     : score >= 60 && score < 80 ? 'Nice! Not too shabby!'
                         : score >= 80 && score < 90 ? 'Impressive! Looks like you really know your stuff!'
                             : 'Perfect Score! Way to go Genius!!!'}</p>
-                <img src="https://res.cloudinary.com/andrerichards/image/upload/v1514879610/quiz/wheel_icon.png" alt="icon" />                            
+                    <button type='button' className='play-button' onClick={playButtonClick}>Play Again?</button>
+                <img src="https://res.cloudinary.com/andrerichards/image/upload/v1514879610/quiz/wheel_icon.png" alt="icon" />
                 <footer></footer>
             </main>
         </div>
@@ -21,6 +22,8 @@ const Results = ({ score }) => {
 }
 
 Results.propTypes = {
+    playButtonShown: PropTypes.bool.isRequired,
+    playButtonClick: PropTypes.func.isRequired,
     score: PropTypes.number.isRequired
 }
 

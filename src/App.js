@@ -94,16 +94,17 @@ class App extends Component {
             onLegendClick={this.onLegendClick}
             legendShown={this.state.legendShown}
             resultsShown={this.state.resultsShown}
+            playButtonShown={this.state.playButtonShown}
+            playButtonClick={this.playButtonClick}
             hideElements={this.state.hideElements}
           />
           <ChoiceBoard choices={this.state.currentQuestion.choices}
             submitEnabled={this.state.submitEnabled}
             onChoiceClick={this.onChoiceClick}
             onSubmitClick={this.onSubmitClick}
+            playButtonShown={this.state.playButtonShown}            
             nextQuestionClick={this.nextQuestionClick}
-            playButtonClick={this.playButtonClick}
             elementShown={this.state.elementShown}
-            playButtonShown={this.state.playButtonShown}
             hideElements={this.state.hideElements} />
         </section>
       </div>

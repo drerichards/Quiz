@@ -37,7 +37,6 @@
         flex-direction: row;
         height: 55vh;
         padding: 1% 15%;
-        /* min-height: 400px; */
     }
     .GameBoard .board {
         box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.39), 0 7px 10px 0 rgba(0, 0, 0, 0.21);
