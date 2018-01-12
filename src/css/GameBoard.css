@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column-reverse;
     padding: 1% 5%;
+    min-height: 300px;
 }
 
 .GameBoard .board {
@@ -25,18 +26,19 @@
     flex: 1;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 812px) and (orientation: landscape) {
     .GameBoard {
         height: 85vh;
     }
 }
 
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
     .GameBoard {
         background-image: url('https://res.cloudinary.com/andrerichards/image/upload/v1514879586/quiz/map.jpg');
         flex-direction: row;
         height: 55vh;
         padding: 1% 15%;
+        min-height: 12em;
     }
     .GameBoard .board {
         box-shadow: 0 8px 6px 0 rgba(0, 0, 0, 0.39), 0 7px 10px 0 rgba(0, 0, 0, 0.21);

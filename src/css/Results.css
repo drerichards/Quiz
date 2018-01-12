@@ -29,7 +29,7 @@
     margin: 1% auto;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 812px) and (orientation: landscape) {
     .Results {
         height: 100%;
         padding: 0% 5%;
@@ -43,7 +43,7 @@
     }
 }
 
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
     .Results {
         height: auto;
         padding: 7% 5%;

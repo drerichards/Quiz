@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 300px;
+
 }
 
 .ChoiceBoard .choice-container {
@@ -25,7 +27,6 @@
     border-radius: 3px;
     background-color: rgba(138, 109, 88, 0.8);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.39), 0 7px 10px 0 rgba(0, 0, 0, 0.31);
-    text-align: justify;
     word-wrap: break-word;
     text-shadow: 1px 2px 1px #000;
     overflow: auto;
@@ -123,7 +124,7 @@
     display: none;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 812px) and (orientation: landscape) {
+@media only screen and (min-width: 320px) and (max-width: 812px) and (orientation: landscape) {
     .ChoiceBoard {
         height: 80vh;
         margin: 0 1%;
@@ -133,9 +134,11 @@
     }
 }
 
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
     .ChoiceBoard {
         width: 90%;
+        height: 35vh;
+        min-height: 10em;
     }
     .ChoiceBoard .choice-box img {
         display: initial;
@@ -145,10 +148,10 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-evenly;
-        min-height: 250px;
+        height: fit-content;
     }
     .ChoiceBoard .choice-box {
-        align-items: center;
+        overflow-x: hidden;
         padding: 2.2%;
         font-size: 1.1em;
     }
@@ -160,7 +163,7 @@
     }
 }
 
-@media only screen and (min-device-width: 1150px) {
+@media only screen and (min-width: 1150px) {
     .ChoiceBoard .choice-box {
         font-size: 1.35em;
     }

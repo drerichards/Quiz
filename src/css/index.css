@@ -82,7 +82,7 @@ ul li {
     list-style: none;
 }
 
-@media only screen and (min-device-width: 768px) {
+@media only screen and (min-width: 768px) {
     body {
         font-size: 20px;
         background-image: url("https://res.cloudinary.com/andrerichards/image/upload/e_brightness_hsb/v1515127100/quiz/bwood.jpg");
